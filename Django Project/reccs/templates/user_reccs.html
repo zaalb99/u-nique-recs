@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-2">
+		<a href="{% url 'home' %}" class="btn btn-outline-primary btn-block">Return Home</a>
+</div>
+
+  <div class="row justify-content-center">
+    <h1>Subreddit Reccomendations:</h1>
+  </div>
+
+  <div class="container h-100">
+      <div class="row justify-content-center">
+        {% for subreddit in sub_posts %}
+          <div class="col-md-10 mb-5">
+            <div class="card mx-auto">
+                <div class="card-header text-left"> <b> {{ subreddit.0|add:"1" }}. {{ subreddit.1 }} </b> </div>
+                <div class="card-body">
+                  <img src="{{ subreddit.2 }}" class="img-fluid" style="max-width:25%;height:auto;">
+                  {% for post, link in subreddit.3 %}
+                   <div class="row pt-2"> 
+                    <div class="col-md-12">
+                      <div class="card inner-card">
+                        <div class="card-body"> 
+                          <a href="https://reddit.com{{ link }}" target="_blank"> {{ post }} </a>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}  
+      </div>
+
+    <div class="col d-flex justify-content-center pt-2">
+      <div class="col-md-3">
+          <table class="table" style="background-color:white;">
+          <thead>
+          <tr>
+          <th scope="col">Subreddit</th>
+          <th scope="col">Count</th>
+          </tr>
+          </thead>
+          <tbody>
+            {% for s in subs %}
+            <tr>
+              <td>{{ s.0}}</td>
+              <td>{{ s.1 }}</td>       
+            </tr>
+            {% endfor %}
+          </tbody>
+          </table>
+      </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

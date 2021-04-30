@@ -1,0 +1,78 @@
+html,
+body,
+main,
+canvas {
+  background: #f7f9fb;
+  border: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.starter-template {
+padding: 3rem 1.5rem;
+text-align: center;
+}
+
+body.my-login-page {
+  background-color: #f7f9fb;
+  font-size: 14px;
+}
+.my-login-page .card {
+  border-color: transparent;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .05);
+}
+.my-login-page .card .card-title {
+  margin-bottom: 30px;
+}
+.my-login-page .card.fat {
+  padding: 10px;
+}
+.my-login-page .form-control {
+  border-width: 2.3px;
+}
+.my-login-page .form-group label {
+  width: 100%;
+}
+.my-login-page .btn.btn-block {
+  padding: 12px 10px;
+}
+.my-login-page .footer {
+  margin: 40px 0;
+  color: #888;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .my-login-page .card-wrapper {
+    width: 90%;
+    margin: 0 auto;
+ }
+}
+@media screen and (max-width: 320px) {
+  .my-login-page .card.fat {
+    padding: 0;
+ }
+  .my-login-page .card.fat .card-body {
+    padding: 15px;
+ }
+}
+
+
+.card {
+  border-color: transparent;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .05);
+}
+.card .card-title {
+  margin-bottom: 30px;
+}
+.hidden {
+  display: none;
+}
+.spinner-border {
+  width: 100px;
+  height: 100px;
+}
+
+.inner-card {
+  border-color: rgb(231, 225, 225);
+}

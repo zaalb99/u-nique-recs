@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<section class="my-login-page h-75">
+      <div class="container h-50">
+        <div class="row">
+          <img class="text-center center-block img-fluid mx-auto" src="{% static 'Reddit-Icon.svg' %}" style="max-width:25%;height:auto;" />
+        </div>
+        <div class="spinner-border mt-5" id="loading-spinner" role="status" style="color:#336699;display:none;width:200px;height: 200px;"> <span class="sr-only">Loading...</span></div>
+        <div class="mt-3 row h-100 justify-content-md-center align-items-center" id="username-card">
+          <div class="col-md-5">
+            <div class="card fat">
+              <div class="card-body">
+                <h4 class="card-title">Reddit Username: </h4>
+
+                  <div class='form-group'>
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form }}
+                        <button type="submit" class="save btn btn-primary btn-block mt-5" style="background-color:#336699;"> Submit </button>
+                    </form>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+          <img class="text-center center-block img-fluid mx-auto" alt=" " src="{% static 'logo.svg' %}" style="max-width:55%;height:auto;" />
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load static %}
+
+<html>
+
+<head>
+  <title>u/nique_recs - local</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'starter-template.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  {% for message in messages %}
+    <div class="container-fluid">
+      <div class="mt-10 text-center">
+        <div class="alert {{ message.tags }}" role="alert" >
+          {{ message }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  <!-- Main Container -->
+  <main role="main" class="container">
+
+      <div class="starter-template">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+  </main><!-- /.container -->
+
+  <!-- JQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+  <!-- Complete Bootstrap JavaScript Bundle -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      {% if alert %}
+          alert('{{alert}}');
+      {% endif %}
+    });
+  </script>
+  <script>
+    $('form').submit(function(event) {
+      event.preventDefault(); //this will prevent the default submit
+      $('#username-card').hide();
+      $('#loading-spinner').show();    
+      $(this).unbind('submit').submit(); // continue the submit unbind preventDefault
+  });
+  </script>
+</body>
+
+</html>
